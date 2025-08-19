@@ -3,5 +3,7 @@ docxtpl
 pypdf
 python-docx
 docx2pdf
-pyinstaller
 openpyxl
+comtypes
+pywin32
+pyinstaller
