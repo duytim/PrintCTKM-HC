@@ -1,0 +1,6 @@
+pandas
+docxtpl
+pypdf
+python-docx
+docx2pdf
+pyinstaller
