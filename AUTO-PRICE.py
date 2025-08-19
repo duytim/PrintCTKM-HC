@@ -1,10 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-AUTO-PRICE - Ứng dụng tự động hóa bảng giá A4 và A5
-Kết hợp tính năng từ A4-AUTO.py và A5-AUTO.py với giao diện thống nhất
-"""
-
 import pandas as pd
 from docxtpl import DocxTemplate
 import os
