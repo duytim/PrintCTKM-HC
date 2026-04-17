@@ -1,0 +1,125 @@
+[09:59:38] INFO - ==============================
+[09:59:38] INFO - 🚀 BẮT ĐẦU CHẠY
+[09:59:38] INFO - 🔵 BƯỚC 1: TẢI TỒN KHO TỪ ERP
+[09:59:38] ERROR - ❌ LỖI: Thiếu tài khoản ERP.
+[09:59:38] INFO - 
+🔵 BƯỚC 2: QUÉT EMAIL
+[09:59:38] INFO - ... Kết nối POP3: 
+[09:59:38] ERROR - ❌ Lỗi Mail: b'-ERR access denied'
+[09:59:38] INFO - 🏁 QUY TRÌNH KẾT THÚC!
+[10:00:07] INFO - ==============================
+[10:00:07] INFO - 🚀 BẮT ĐẦU CHẠY
+[10:00:07] INFO - 🔵 BƯỚC 1: TẢI TỒN KHO TỪ ERP
+[10:00:07] INFO - ... Kết nối ERP & Đăng nhập
+[10:00:08] INFO - ... Đang tải file CSV
+[10:00:23] INFO - ... Lọc kho: 046_01
+[10:00:24] INFO - ✅ Đã lưu: Tonkho_046_01_20260411_1000.csv
+[10:00:24] INFO - 
+🔵 BƯỚC 2: QUÉT EMAIL
+[10:00:24] INFO - ... Kết nối POP3: duynguyen1@hc.com.vn
+[10:00:24] INFO - ... Tổng: 179 email. Đang quét 50 mail mới nhất...
+[10:00:25] INFO - ➡️ Đọc: [Gia_46] Thông báo thay đổi giá BL -SP.077467
+[10:00:27] INFO - ✅ Lấy xong 1 email.
+[10:00:27] INFO - 
+🔵 BƯỚC 3: TÍNH GIÁ
+[10:00:28] INFO - ✅ Đã tạo: filtered_email_tables.csv
+[10:00:28] INFO - 
+🔵 BƯỚC 4: TẠO PDF (LibreOffice)
+[10:00:28] INFO - ℹ️ Đã cập nhật banner vào: A4-Auto.docx
+[10:00:28] WARNING - ⚠️ Lỗi thay ảnh: [WinError 32] The process cannot access the file because it is being used by another process
+[10:00:28] INFO - ... Đang trộn dữ liệu (37 SP)
+[10:00:31] INFO - ... Đang Convert sang PDF (Batch Process)
+[10:01:14] INFO - 🎉 XONG! File: BangGia_Final_A4.pdf
+[10:01:14] INFO - 🏁 QUY TRÌNH KẾT THÚC!
+[10:12:24] INFO - 
+🔵 TẠO FILE DEMO BẢNG GIÁ
+[10:12:28] INFO - 🎉 XONG! File: Demo_BangGia_A4.pdf
+[14:51:09] INFO - 
+🔵 TẠO FILE DEMO BẢNG GIÁ
+[14:51:20] INFO - 🎉 XONG! File: Demo_BangGia_A4.pdf
+[15:05:45] INFO - 
+🔵 TẠO FILE DEMO BẢNG GIÁ
+[15:05:49] INFO - 🎉 XONG! File: Demo_BangGia_A4.pdf
+[15:06:00] INFO - ==============================
+[15:06:00] INFO - 🚀 BẮT ĐẦU CHẠY
+[15:06:00] INFO - 🔵 BƯỚC 1: TẢI TỒN KHO TỪ ERP
+[15:06:15] INFO - ✅ Đã lưu: Tonkho_046_01_20260411_1506.csv
+[15:06:15] INFO - 
+🔵 BƯỚC 2: QUÉT EMAIL (IMAP HYBRID)
+[15:06:15] ERROR - ❌ Lỗi Mail (IMAP): None
+[15:06:59] INFO - ==============================
+[15:06:59] INFO - 🚀 BẮT ĐẦU CHẠY
+[15:06:59] INFO - 🔵 BƯỚC 1: TẢI TỒN KHO TỪ ERP
+[15:07:15] INFO - ✅ Đã lưu: Tonkho_046_01_20260411_1507.csv
+[15:07:15] INFO - 
+🔵 BƯỚC 2: QUÉT EMAIL (IMAP HYBRID)
+[15:07:16] INFO - ➡️ Bóc tách: [Gia_46] Thông báo thay đổi giá BL -SP.077467
+[15:07:16] INFO - 
+🔵 BƯỚC 3: TÍNH GIÁ
+[15:07:16] INFO - 
+🔵 BƯỚC 4: TẠO PDF (LibreOffice)
+[15:07:29] INFO - 🎉 XONG! File: BangGia_Final_A4.pdf
+[15:07:56] INFO - ==============================
+[15:07:56] INFO - 🚀 BẮT ĐẦU CHẠY
+[15:07:56] INFO - 🔵 BƯỚC 1: TÌM FILE TỒN KHO CÓ SẴN
+[15:07:56] INFO - ✅ Sử dụng file: Tonkho_046_01_20260411_1507.csv
+[15:07:56] INFO - 
+🔵 BƯỚC 2: QUÉT EMAIL (IMAP HYBRID)
+[15:07:57] INFO - ➡️ Bóc tách: [Gia_46] Thông báo thay đổi giá BL -SP.077477
+[15:07:57] INFO - ➡️ Bóc tách: [Gia_46] Thông báo thay đổi giá BL -SP.077479
+[15:07:57] INFO - ➡️ Bóc tách: [Gia_46] Thông báo thay đổi giá BL -SP.077480
+[15:07:57] INFO - 
+🔵 BƯỚC 3: TÍNH GIÁ
+[15:07:57] INFO - 
+🔵 BƯỚC 4: TẠO PDF (LibreOffice)
+[15:08:12] INFO - 🎉 XONG! File: BangGia_Final_A4.pdf
+[21:30:18] INFO - ==============================
+[21:30:18] INFO - 🚀 BẮT ĐẦU CHẠY
+[21:30:18] INFO - 🔵 BƯỚC 1: TẢI TỒN KHO TỪ ERP
+[21:30:35] INFO - ✅ Đã lưu: Tonkho_046_01_20260416_2130.csv
+[21:30:35] INFO - 
+🔵 BƯỚC 2: QUÉT EMAIL (IMAP HYBRID)
+[21:30:35] INFO - ➡️ Bóc tách: [Gia_46] Thông báo thay đổi giá BL -SP.077565
+[21:30:35] INFO - ➡️ Bóc tách: [Gia_46] Thông báo thay đổi giá BL -SP.077567
+[21:30:36] INFO - 
+🔵 BƯỚC 3: TÍNH GIÁ
+[21:30:36] INFO - 
+🔵 BƯỚC 4: TẠO PDF (LibreOffice)
+[21:30:55] INFO - 🎉 XONG! File: BangGia_Final_A4.pdf
+[21:31:35] INFO - ==============================
+[21:31:35] INFO - 🚀 BẮT ĐẦU CHẠY
+[21:31:35] INFO - 🔵 BƯỚC 1: TÌM FILE TỒN KHO CÓ SẴN
+[21:31:35] INFO - ✅ Sử dụng file: Tonkho_046_01_20260416_2130.csv
+[21:31:35] INFO - 
+🔵 BƯỚC 2: QUÉT EMAIL (IMAP HYBRID)
+[21:31:35] INFO - ➡️ Bóc tách: [Gia_46] Thông báo thay đổi giá BL -SP.077565
+[21:31:35] INFO - ➡️ Bóc tách: [Gia_46] Thông báo thay đổi giá BL -SP.077567
+[21:31:36] INFO - 
+🔵 BƯỚC 3: TÍNH GIÁ
+[21:31:36] INFO - 
+🔵 BƯỚC 4: TẠO PDF (LibreOffice)
+[21:31:43] INFO - 🎉 XONG! File: BangGia_Final_A5.pdf
+[21:32:22] INFO - ==============================
+[21:32:22] INFO - 🚀 BẮT ĐẦU CHẠY
+[21:32:22] INFO - 🔵 BƯỚC 1: TÌM FILE TỒN KHO CÓ SẴN
+[21:32:22] INFO - ✅ Sử dụng file: Tonkho_046_01_20260416_2130.csv
+[21:32:22] INFO - 
+🔵 BƯỚC 2: QUÉT EMAIL (IMAP HYBRID)
+[21:32:23] INFO - ➡️ Bóc tách: [Gia_46] Thông báo thay đổi giá BL -SP.077570
+[21:32:23] INFO - 
+🔵 BƯỚC 3: TÍNH GIÁ
+[21:32:23] INFO - 
+🔵 BƯỚC 4: TẠO PDF (LibreOffice)
+[21:32:34] INFO - 🎉 XONG! File: BangGia_Final_A4.pdf
+[13:58:00] INFO - ==============================
+[13:58:00] INFO - 🚀 BẮT ĐẦU CHẠY
+[13:58:00] INFO - 🔵 BƯỚC 1: TẢI TỒN KHO TỪ ERP
+[13:58:15] INFO - ✅ Đã lưu: Tonkho_046_01_20260417_1358.csv
+[13:58:15] INFO - 
+🔵 BƯỚC 2: QUÉT EMAIL (IMAP HYBRID)
+[13:58:15] INFO - ➡️ Bóc tách: [Gia_46] Thông báo thay đổi giá BL -SP.077572
+[13:58:16] INFO - 
+🔵 BƯỚC 3: TÍNH GIÁ
+[13:58:16] INFO - 
+🔵 BƯỚC 4: TẠO PDF (LibreOffice)
+[13:58:23] INFO - 🎉 XONG! File: BangGia_Final_A4.pdf

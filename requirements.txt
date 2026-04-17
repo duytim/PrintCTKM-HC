@@ -1,9 +1,7 @@
+PySide6
 pandas
+requests
+beautifulsoup4
 docxtpl
 pypdf
-python-docx
-docx2pdf
-openpyxl
-comtypes
-pywin32
-pyinstaller
+nuitka
