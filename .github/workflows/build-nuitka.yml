@@ -6,6 +6,10 @@ on:
       - "v*"   # ví dụ: v1.0.0
   workflow_dispatch:
 
+# BỔ SUNG QUYỀN GHI ĐỂ TẠO RELEASE
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: windows-latest
@@ -14,13 +18,13 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    # ⚡ Cache toàn bộ toolchain (rất quan trọng)
+    # Dùng dấu gạch chéo xuôi (/) cho đường dẫn để tránh lỗi trên runner
     - name: Cache Nuitka & MinGW
       uses: actions/cache@v4
       with:
         path: |
-          ~\AppData\Local\Nuitka
-          ~\AppData\Local\pip\Cache
+          ~/AppData/Local/Nuitka
+          ~/AppData/Local/pip/Cache
         key: ${{ runner.os }}-nuitka-${{ hashFiles('requirements.txt') }}
 
     - name: Setup Python
@@ -35,7 +39,7 @@ jobs:
         pip install nuitka
         pip install -r requirements.txt
 
-    # 🚀 Build exe
+    # Tối ưu lệnh Build: Bỏ --lto=yes, thêm --output-filename
     - name: Build EXE
       shell: cmd
       run: |
@@ -46,24 +50,19 @@ jobs:
           --enable-plugin=pyside6 ^
           --windows-console-mode=disable ^
           --windows-icon-from-ico=logo.ico ^
+          --output-filename=Tool_BangGia_Pro.exe ^
           --jobs=%NUMBER_OF_PROCESSORS% ^
-          --lto=yes ^
           --remove-output ^
           main.py
 
-    # 🔧 Rename cho chuyên nghiệp
-    - name: Rename file
-      run: |
-        ren main.exe Tool_BangGia_Pro.exe
+    # Bỏ bước Rename vì Nuitka đã tự đặt tên file
 
-    # 📦 Upload artifact (debug / download nhanh)
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
         name: Tool_BangGia_Pro
         path: Tool_BangGia_Pro.exe
 
-    # 🚀 Auto tạo release + attach file
     - name: Create GitHub Release
       uses: softprops/action-gh-release@v2
       with:
