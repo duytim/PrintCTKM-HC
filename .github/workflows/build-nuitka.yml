@@ -37,6 +37,7 @@ jobs:
 
     # 🚀 Build exe
     - name: Build EXE
+      shell: cmd
       run: |
         python -m nuitka ^
           --assume-yes-for-downloads ^
