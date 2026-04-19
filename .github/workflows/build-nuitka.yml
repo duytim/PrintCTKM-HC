@@ -1,45 +1,71 @@
-name: Build App Windows (Nuitka)
+name: Build & Release Windows EXE
 
-# Kích hoạt quy trình này khi có code mới đẩy lên nhánh main
-# Hoặc cho phép bấm chạy thủ công (workflow_dispatch)
 on:
   push:
-    branches: [ "main", "master" ]
+    tags:
+      - "v*"   # ví dụ: v1.0.0
   workflow_dispatch:
 
 jobs:
   build:
-    # Sử dụng máy chủ Windows mới nhất của GitHub
     runs-on: windows-latest
 
     steps:
-    - name: Tải mã nguồn về máy chủ
+    - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Cài đặt Python 3.12
+    # ⚡ Cache toàn bộ toolchain (rất quan trọng)
+    - name: Cache Nuitka & MinGW
+      uses: actions/cache@v4
+      with:
+        path: |
+          ~\AppData\Local\Nuitka
+          ~\AppData\Local\pip\Cache
+        key: ${{ runner.os }}-nuitka-${{ hashFiles('requirements.txt') }}
+
+    - name: Setup Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.12'
-        cache: 'pip' # Lưu cache pip để các lần build sau nhanh hơn
+        python-version: "3.12"
+        cache: "pip"
 
-    - name: Cài đặt thư viện (Dependencies)
+    - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
+        pip install nuitka
         pip install -r requirements.txt
 
-    - name: Biên dịch bằng Nuitka
+    # 🚀 Build exe
+    - name: Build EXE
       run: |
         python -m nuitka ^
           --assume-yes-for-downloads ^
           --mingw64 ^
-          --standalone ^
+          --onefile ^
           --enable-plugin=pyside6 ^
           --windows-console-mode=disable ^
           --windows-icon-from-ico=logo.ico ^
+          --jobs=%NUMBER_OF_PROCESSORS% ^
+          --lto=yes ^
+          --remove-output ^
           main.py
-    - name: Đóng gói và Lưu kết quả (Artifacts)
+
+    # 🔧 Rename cho chuyên nghiệp
+    - name: Rename file
+      run: |
+        ren main.exe Tool_BangGia_Pro.exe
+
+    # 📦 Upload artifact (debug / download nhanh)
+    - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
-        name: Tool_BangGia_Pro_Windows
-        # Nuitka mode standalone sẽ tạo ra thư mục .dist, ta sẽ upload thư mục này
-        path: main.dist/
+        name: Tool_BangGia_Pro
+        path: Tool_BangGia_Pro.exe
+
+    # 🚀 Auto tạo release + attach file
+    - name: Create GitHub Release
+      uses: softprops/action-gh-release@v2
+      with:
+        files: Tool_BangGia_Pro.exe
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
