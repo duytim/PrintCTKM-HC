@@ -29,8 +29,14 @@ jobs:
 
     - name: Biên dịch bằng Nuitka
       run: |
-        python -m nuitka --assume-yes-for-downloads --mingw64 --standalone --enable-plugin=pyside6 --windows-console-mode=disable --windows-icon-from-ico=logo.ico main.py
-
+        python -m nuitka ^
+          --assume-yes-for-downloads ^
+          --mingw64 ^
+          --standalone ^
+          --enable-plugin=pyside6 ^
+          --windows-console-mode=disable ^
+          --windows-icon-from-ico=logo.ico ^
+          main.py
     - name: Đóng gói và Lưu kết quả (Artifacts)
       uses: actions/upload-artifact@v4
       with:
